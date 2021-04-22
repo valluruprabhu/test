@@ -1,0 +1,653 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Zalando" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,696" sap2010:WorkflowViewState.IdRef="Zalando_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="22">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Zalando" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_ZUKInputDT" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolGooglehromexist" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="int_Count" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolDollerExist" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolMenIMGexist" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolWomenIMGexist" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolKidsIMGexist" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolWebpageNotfound" />
+      <Variable x:TypeArguments="x:String" Name="str_ZUKItemStatus" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">70,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">100,77.5 100,127.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID1</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">0,127.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">200,160.5 230,160.5 230,159.54 250,159.54</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Open Excel and Browser Sequence" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'chrome.exe GEORGE'" FileName="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="44601baff2e437bf1fa7f4a4f706f5e9" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;">
+          <ui:OpenApplication.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+            </ActivityAction>
+          </ui:OpenApplication.Body>
+        </ui:OpenApplication>
+        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,391" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="C:\Users\DOS88942\Desktop\DD\DD_Test\EMI_RAj.xlsx">
+          <ui:ExcelApplicationScope.Body>
+            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,282" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ExcelReadRange AddHeaders="False" DataTable="[DT_ZUKInputDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+                  <ui:ExcelReadRange.Range>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </ui:ExcelReadRange.Range>
+                </ui:ExcelReadRange>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Input Sheet read&quot;]" />
+              </Sequence>
+            </ActivityAction>
+          </ui:ExcelApplicationScope.Body>
+        </ui:ExcelApplicationScope>
+      </Sequence>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">250,126.54</av:Point>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap:VirtualizedContainerService.HintSize="2174,3915" sap2010:WorkflowViewState.IdRef="Sequence_45">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2132,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;DT Count : &quot;+DT_ZUKInputDT.Rows.Count.ToString]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2132,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Beore remove empty Rows&quot;+DT_ZUKInputDT.Rows.Count.ToString]" />
+            <Assign sap:VirtualizedContainerService.HintSize="2132,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="sd:DataTable">[DT_ZUKInputDT]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[DT_ZUKInputDT.AsEnumerable.Skip(1).CopyToDataTable]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2132,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[DT_ZUKInputDT.Rows.Count.ToString]" />
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[DT_ZUKInputDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="2132,3330" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                  </ActivityAction.Argument>
+                  <Sequence sap:VirtualizedContainerService.HintSize="2082,3182" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="2040,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;DT exist &quot;]" />
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="2040,2959" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="str_ZUKItemURL" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="1998,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[str_ZUKItemURL]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row(4).ToString.Trim.ToLower]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:UiElementExists DisplayName="Element Exists 'chrome.exe Chrome'" Exists="[boolGooglehromexist]" sap:VirtualizedContainerService.HintSize="1998,106" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="90b59658b188fee791c4cf63599c44f5" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <If Condition="[boolGooglehromexist=True]" sap:VirtualizedContainerService.HintSize="1998,51" sap2010:WorkflowViewState.IdRef="If_22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;Goole Chrome Exists&quot;]" />
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="476,768" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Error" Message="[&quot;Goole Chrome Does't  Exists&quot;]" />
+                            <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'chrome.exe  New Tab'" FileName="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="OpenApplication_3" InformativeScreenshot="44601baff2e437bf1fa7f4a4f706f5e9" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;">
+                              <ui:OpenApplication.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                  </ActivityAction.Argument>
+                                </ActivityAction>
+                              </ui:OpenApplication.Body>
+                            </ui:OpenApplication>
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe GEORGE'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_9" InformativeScreenshot="d84476e008267d86674fac5c7f618aaf" Selector="&lt;html app='chrome.exe' omit:htmlwindowname='{&amp;quot;zlnd_t_tid&amp;quot;:&amp;quot;Fa8JV4QLS8KtL1pC5Z6Js&amp;quot;}' title='*' /&gt;">
+                              <ui:BrowserScope.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window 'chrome.exe GEORGE'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseWindow_8" InformativeScreenshot="ee3342457970d03d028b05746bdbcaae" WaitForReady="INTERACTIVE" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:BrowserScope.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:BrowserScope>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe  New Tab'" sap:VirtualizedContainerService.HintSize="1998,51" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="44601baff2e437bf1fa7f4a4f706f5e9" Selector="&lt;html app='chrome.exe' /&gt;">
+                        <ui:BrowserScope.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="797,1066" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_2" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Trace" Message="[&quot;Enter URL &quot;]" />
+                              <ui:UiElementExists DisplayName="Element Exists 'chrome.exe Chrome'" Exists="[boolGooglehromexist]" sap:VirtualizedContainerService.HintSize="755,106" sap2010:WorkflowViewState.IdRef="UiElementExists_10">
+                                <ui:UiElementExists.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="90b59658b188fee791c4cf63599c44f5" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+                                </ui:UiElementExists.Target>
+                              </ui:UiElementExists>
+                              <If Condition="[boolGooglehromexist=True]" sap:VirtualizedContainerService.HintSize="755,504" sap2010:WorkflowViewState.IdRef="If_23">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,357" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Info" Message="[&quot;URL : &quot;+row(4).ToString.Trim]" />
+                                    <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'chrome.exe New'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="True" Text="[str_ZUKItemURL.ToString.Trim+ &quot;[k(enter)]&quot;]">
+                                      <ui:TypeInto.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="e189d77ce8ef899f12ade234f9e509be" WaitForReady="NONE">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                        </ui:Target>
+                                      </ui:TypeInto.Target>
+                                    </ui:TypeInto>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;Chrome new window does't exist&quot;]" />
+                                </If.Else>
+                              </If>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="755,91" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Info" Message="[&quot;enter Item URL&quot;]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:BrowserScope.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:BrowserScope>
+                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe adidas'" sap:VirtualizedContainerService.HintSize="1998,2439" sap2010:WorkflowViewState.IdRef="BrowserScope_11" InformativeScreenshot="ee3342457970d03d028b05746bdbcaae" Selector="&lt;html app='chrome.exe' omit:htmlwindowname='{&amp;quot;zlnd_t_tid&amp;quot;:&amp;quot;SK0uwdTG5aZS83hpSVTQS&amp;quot;}' title='*' /&gt;">
+                        <ui:BrowserScope.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1964,2293" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1922,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
+                                <ui:CommentOut.Body>
+                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_61">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:GetValue ContinueOnError="{x:Null}" Value="{x:Null}" DisplayName="Get Text 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                                      <ui:GetValue.Target>
+                                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1abe66d96f0a11500ee1eeb8f29e05bb" Selector="&lt;webctrl aaname='£*' tag='SPAN' innertext='£*' /&gt;">
+                                          <ui:Target.TimeoutMS>
+                                            <InArgument x:TypeArguments="x:Int32" />
+                                          </ui:Target.TimeoutMS>
+                                          <ui:Target.WaitForReady>
+                                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                                          </ui:Target.WaitForReady>
+                                        </ui:Target>
+                                      </ui:GetValue.Target>
+                                    </ui:GetValue>
+                                  </Sequence>
+                                </ui:CommentOut.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:CommentOut>
+                              <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[boolDollerExist]" sap:VirtualizedContainerService.HintSize="1922,106" sap2010:WorkflowViewState.IdRef="UiElementExists_11">
+                                <ui:UiElementExists.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1abe66d96f0a11500ee1eeb8f29e05bb" Selector="&lt;webctrl aaname='£*' tag='SPAN' innertext='£*' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                                </ui:UiElementExists.Target>
+                              </ui:UiElementExists>
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1922,1454" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If Condition="[boolDollerExist=True]" sap:VirtualizedContainerService.HintSize="1880,1362" sap2010:WorkflowViewState.IdRef="If_34">
+                                  <If.Then>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="1309,1215" sap2010:WorkflowViewState.IdRef="Sequence_66">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:ImageFound DisplayName="Women Image Exists 'chrome.exe Miss'" Found="[boolWomenIMGexist]" sap:VirtualizedContainerService.HintSize="1267,106" sap2010:WorkflowViewState.IdRef="ImageFound_7">
+                                        <ui:ImageFound.Image>
+                                          <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAkCAYAAADb0CfrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO6SURBVGhD7ZbLK65RFMbP32HuLzBVZkoZKEmSlIGBUpJCDAxkImLESKQQKQYGmEgyMCBC7rcil9zv13X6rc7avZzv2985Ok6pverpe7+1137evZ699trvj6SkJAmIjSCOB0EcD4I4HgRxPAjieBDE8SCI40EQx4MgjgdBHA+84jQ1NcnAwIB0d3dLZmam81dWVsb0l5WVqb+np0fy8/Od/7vCK05vb6+8vb3Jw8ODNDY2Ov/MzIxgj4+P0tzc7PxTU1PqPzk5kcLCQuf/rvCKU1NTI7e3t5rw0NCQ+jIyMmRvb099WCz/wsLCO57vCq84qampsrW1pQmvrKxIcnKylJSUyOXlpfowE8KEfH19lY6ODsdRUVEhfX19etzq6uqUw8ZycnKktLRUCgoKpKioSI8jyMvL0/Ha2lqdB1/0+AJ44GMcft4THY9ywwcvcfiicT4kbMijo6MqwtnZmRQXF0tbW5s8Pz/L3d2dPD09yf7+vmRlZWkCCHN1daW9Jy0tTWZnZ/VYRm1zc9P1o8nJSfXBbRWKXVxc6NjLy8svj+h7SJh5zN/Y2HjHzfPi4qK+N8p9fHysfGb39/fS2trq8vMhoTj0FHqL9RcTa25uziVF1VgfotKouImJCV3w9fW1jIyM6A6fnp5qDEkQYwlgcO3u7rqE+T08PFTwbBVJxdi74GNNgGfieC/r/si9tramOWDLy8u/5RkLCcWhsdJgMYSB2Ba6vr6uzzRudtZiqDAWxFhXV5fjamho0J0D9fX1LoHz83M9rtFjvL29rVVgXBhHIx43z/gYI+YjNzF2YRwcHLgq9CGhOMB2amdnR46Ojly1sEsYlYDPkuZm44a7ubmR8vJyx5Obm+sqgc8ASwCRrRetrq6qjzH+kwTJYIhjlRzP7GaNxW2+fyqO9ROSp99Yn7H+Axi3lyIQsSai8VgVEgunLRZBLCaROMYNB9W1tLT0DvPz81JVVRWT+0vEocHSaM3shqIqqA4zKgw/DZNGSIUMDw87nvb2dm3izKmurv6UOMaNjY+Pu3ktLS0yNjYmnZ2dkp6e/v/EifYCzL5tqB7rNVYNNqe/v19vG6qKHaWBs+MIxiIp9c+Igw/B4YGbjZqenlZujA2Kx/0l4gAEweJ9LVsjND8LHBwcdIvGSIYFfrxu/1aclJQUrZpo70EshMrOzo7L/WXifBYIwW3Bxxdf0bFiPoso958k+7f4cnG+M4I4HgRxPAjieBDE8SCI40EQx4MgjgdBHA+COB4EcTwI4sRFkvwE12CPRrZFY2QAAAAASUVORK5CYII=" />
+                                        </ui:ImageFound.Image>
+                                        <ui:ImageFound.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="1000" WaitForReady="INTERACTIVE" />
+                                        </ui:ImageFound.Target>
+                                      </ui:ImageFound>
+                                      <If Condition="[boolWomenIMGexist=True]" sap:VirtualizedContainerService.HintSize="1267,977" sap2010:WorkflowViewState.IdRef="If_30">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["Women"]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="960,830" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:ImageFound DisplayName="Men Image Exists 'chrome.exe Men’s'" Found="[boolMenIMGexist]" sap:VirtualizedContainerService.HintSize="918,106" sap2010:WorkflowViewState.IdRef="ImageFound_8">
+                                              <ui:ImageFound.Image>
+                                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAjCAYAAADrJzjpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHkSURBVFhH7ZWh0qMwFIX3OfIgPEHlOhxuXRyyDvc/Aa4uMg4Xh4urxMXFxeGQZ28KgZS207+7Q2Z3JnfmzNCcS/I1OcAPxhj+R2Xw1MrgqZXBUyuDp1YGT6234GUj0HXdLPmFaufX7eJ5tfWdd6Tegjd6xFYOPY/9FtdpsXwZGXnH6kNwwKpy83lPf4VqmnDj/xfBR2sf4EplZ8/d8B/BTzVaucRINCiLyCtK/OIcnFc4sRPOYu6TLUcRz/FC3wfXGsZfTFe0N6+AvA0Aw7BcROCVGHB/Vr4cdFPMPY1efAdj4rz5tZq38N+PilGYN3ikxb0X8m1pp3bglaJRXxOcFjjzM4R284lNBrKknhXc1whrDOw6QD07jr0+AJfrtev5trDr0SyRCeC8X6JDXr3OVWMbju6nGsT+FMLmvNZH4Ky9zrtmO9QLhT/Wux66J0ToZfm+FZJOLGT/MHAm15xfQ74v+x6GyzD/xOTzax6lviLIKBbHgZdLzkPRorRbe/CyC00DxPomqSHpAVf05hDNz9TgUX59WYXySQ8rog/TaKBVj8GFAQtVUU9q8G1ymp7y/bSHVHCBITSGmiz0pdrNcxD43+pU+Y9M+NA87/kTHQ5+lDJ4amXw1MrgqZXBUyuDpxXDb+nzWJgswE3OAAAAAElFTkSuQmCC" />
+                                              </ui:ImageFound.Image>
+                                              <ui:ImageFound.Target>
+                                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="1000" WaitForReady="INTERACTIVE" />
+                                              </ui:ImageFound.Target>
+                                            </ui:ImageFound>
+                                            <If Condition="[boolMenIMGexist]" sap:VirtualizedContainerService.HintSize="918,592" sap2010:WorkflowViewState.IdRef="If_31">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <If.Then>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">Men</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="611,445" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:ImageFound DisplayName="Kids Image Exists 'chrome.exe Kids'" Found="[boolKidsIMGexist]" sap:VirtualizedContainerService.HintSize="569,106" sap2010:WorkflowViewState.IdRef="ImageFound_9">
+                                                    <ui:ImageFound.Image>
+                                                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAlCAYAAAAEGWqvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJMSURBVFhH7ZWhkqQwEIbvOXgQngC5Lg43DjcSh+MJxuGQuDjcuDgkLg43Lg75XyckIZNht3aou6O2jq76RXo6TX9Jp+dXkiT4yToBjtYJcLROgKN1AhytE+Bo/Q8AV9w4ByfdrqE/Rdksfs47NOUHElahNesbrk85QjFU7Va+ffoGQAeJxWS3+vNOYrb+WXbItb8SUMYj0fn9sSqIJegp317tAtgsXqvoMEgJKXvUfn+sgwFSf8pU/NSjTIPYlOFSFCiKHFmQIyvbpdU6aq3sE4CMWrWzLanjWLr+9oXeApjEWjweAlVYvNZLC6WoxMN4vM0Kyl6fA0irOx7uSr0pjG3+nH9DbwGENvGN5DHAlQoza31bA3p+h/Qn4AAY+LSs1XCj2ytQ95Nt0RFN/I1IuwEIAX0exUYApeuVx32dSozTzsUWgNK3lBpblHlGvgy5acULWHzLkd4CMD1frAVAURuFsREAvXVjSlRBvgJ3ey2uha7O4W2GeozgpYZx+7b19iPWvnAK6eJSFxsBNKNZUCc0Qb6tR5yiuPUYJoX56S0oiMrFbGsXQJLkdLoegT5iJ0YEwKiXF5vAbbuFU2zJR9OnFxilQMNs/qzG8AK5rZ0AJEZ+xzDTY9O9GgGYGLPWNtPpPh2vzbc+4nkSaGt6xN1gp9KMobbf+0T7AUgs/kOLAUhZLfwkMkbjV9iCfb68xeiuxduM6R605yf6BsAfkPuDu7AvCkrBLnryLMqzrZhX/RuAv6gT4GidAEfrBDhaJ8DROgGO1g8HSPAbA8E0J849gfMAAAAASUVORK5CYII=" />
+                                                    </ui:ImageFound.Image>
+                                                    <ui:ImageFound.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="1000" WaitForReady="INTERACTIVE" />
+                                                    </ui:ImageFound.Target>
+                                                  </ui:ImageFound>
+                                                  <If Condition="[boolKidsIMGexist]" sap:VirtualizedContainerService.HintSize="569,207" sap2010:WorkflowViewState.IdRef="If_32">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If.Then>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">Kids</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">["No Status Available"]</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="526,445" sap2010:WorkflowViewState.IdRef="Sequence_67">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:UiElementExists DisplayName="Element Exists 'H1'" Exists="[boolWebpageNotfound]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_15">
+                                        <ui:UiElementExists.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3b72366f2c07961136e8b7448c73811c" Selector="&lt;webctrl tag='H1' aaname='We couldn&amp;apos;t find this page.' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:UiElementExists.Target>
+                                      </ui:UiElementExists>
+                                      <If Condition="[boolWebpageNotfound=True]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_33">
+                                        <If.Then>
+                                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">Couldn't find this web page</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </If.Then>
+                                      </If>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                              <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="1922,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                              <Assign sap:VirtualizedContainerService.HintSize="1922,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[int_Count]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[int_Count+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:WriteCell Cell="[&quot;G&quot;+int_Count.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1139,115" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="Sheet1" Text="[str_ZUKItemStatus]" WorkbookPath="C:\Users\DOS88942\Desktop\DD\DD_Test\EMI_RAj.xlsx" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1139,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Str_Item Status : - &quot;+str_ZUKItemStatus]" />
+                              <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1139,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:BrowserScope.Body>
+                      </ui:BrowserScope>
+                    </Sequence>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">290,44.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe adidas'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="BrowserScope_12" InformativeScreenshot="ee3342457970d03d028b05746bdbcaae" Selector="&lt;html app='chrome.exe' omit:htmlwindowname='{&amp;quot;zlnd_t_tid&amp;quot;:&amp;quot;SK0uwdTG5aZS83hpSVTQS&amp;quot;}' title='*' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1139,1616" sap2010:WorkflowViewState.IdRef="Sequence_63">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:UiElementExists DisplayName="Element Exists 'SPAN'" Exists="[boolDollerExist]" sap:VirtualizedContainerService.HintSize="1097,106" sap2010:WorkflowViewState.IdRef="UiElementExists_12">
+                <ui:UiElementExists.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1abe66d96f0a11500ee1eeb8f29e05bb" Selector="&lt;webctrl aaname='£*' tag='SPAN' innertext='£*' /&gt;" TimeoutMS="10000" WaitForReady="INTERACTIVE" />
+                </ui:UiElementExists.Target>
+              </ui:UiElementExists>
+              <If Condition="[boolDollerExist=True]" sap:VirtualizedContainerService.HintSize="1097,1378" sap2010:WorkflowViewState.IdRef="If_25">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="526,1231" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ImageFound DisplayName="Women Image Exists 'chrome.exe Miss'" Found="[boolWomenIMGexist]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ImageFound_4">
+                      <ui:ImageFound.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAkCAYAAADb0CfrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO6SURBVGhD7ZbLK65RFMbP32HuLzBVZkoZKEmSlIGBUpJCDAxkImLESKQQKQYGmEgyMCBC7rcil9zv13X6rc7avZzv2985Ok6pverpe7+1137evZ699trvj6SkJAmIjSCOB0EcD4I4HgRxPAjieBDE8SCI40EQx4MgjgdBHA+84jQ1NcnAwIB0d3dLZmam81dWVsb0l5WVqb+np0fy8/Od/7vCK05vb6+8vb3Jw8ODNDY2Ov/MzIxgj4+P0tzc7PxTU1PqPzk5kcLCQuf/rvCKU1NTI7e3t5rw0NCQ+jIyMmRvb099WCz/wsLCO57vCq84qampsrW1pQmvrKxIcnKylJSUyOXlpfowE8KEfH19lY6ODsdRUVEhfX19etzq6uqUw8ZycnKktLRUCgoKpKioSI8jyMvL0/Ha2lqdB1/0+AJ44GMcft4THY9ywwcvcfiicT4kbMijo6MqwtnZmRQXF0tbW5s8Pz/L3d2dPD09yf7+vmRlZWkCCHN1daW9Jy0tTWZnZ/VYRm1zc9P1o8nJSfXBbRWKXVxc6NjLy8svj+h7SJh5zN/Y2HjHzfPi4qK+N8p9fHysfGb39/fS2trq8vMhoTj0FHqL9RcTa25uziVF1VgfotKouImJCV3w9fW1jIyM6A6fnp5qDEkQYwlgcO3u7rqE+T08PFTwbBVJxdi74GNNgGfieC/r/si9tramOWDLy8u/5RkLCcWhsdJgMYSB2Ba6vr6uzzRudtZiqDAWxFhXV5fjamho0J0D9fX1LoHz83M9rtFjvL29rVVgXBhHIx43z/gYI+YjNzF2YRwcHLgq9CGhOMB2amdnR46Ojly1sEsYlYDPkuZm44a7ubmR8vJyx5Obm+sqgc8ASwCRrRetrq6qjzH+kwTJYIhjlRzP7GaNxW2+fyqO9ROSp99Yn7H+Axi3lyIQsSai8VgVEgunLRZBLCaROMYNB9W1tLT0DvPz81JVVRWT+0vEocHSaM3shqIqqA4zKgw/DZNGSIUMDw87nvb2dm3izKmurv6UOMaNjY+Pu3ktLS0yNjYmnZ2dkp6e/v/EifYCzL5tqB7rNVYNNqe/v19vG6qKHaWBs+MIxiIp9c+Igw/B4YGbjZqenlZujA2Kx/0l4gAEweJ9LVsjND8LHBwcdIvGSIYFfrxu/1aclJQUrZpo70EshMrOzo7L/WXifBYIwW3Bxxdf0bFiPoso958k+7f4cnG+M4I4HgRxPAjieBDE8SCI40EQx4MgjgdBHA+COB4EcTwI4sRFkvwE12CPRrZFY2QAAAAASUVORK5CYII=" />
+                      </ui:ImageFound.Image>
+                      <ui:ImageFound.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+                      </ui:ImageFound.Target>
+                    </ui:ImageFound>
+                    <If Condition="[boolWomenIMGexist=True]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_27">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">["Women"]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <ui:ImageFound DisplayName="Men Image Exists 'chrome.exe Men’s'" Found="[boolMenIMGexist]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ImageFound_5">
+                      <ui:ImageFound.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC4AAAAjCAYAAADrJzjpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHkSURBVFhH7ZWh0qMwFIX3OfIgPEHlOhxuXRyyDvc/Aa4uMg4Xh4urxMXFxeGQZ28KgZS207+7Q2Z3JnfmzNCcS/I1OcAPxhj+R2Xw1MrgqZXBUyuDp1YGT6234GUj0HXdLPmFaufX7eJ5tfWdd6Tegjd6xFYOPY/9FtdpsXwZGXnH6kNwwKpy83lPf4VqmnDj/xfBR2sf4EplZ8/d8B/BTzVaucRINCiLyCtK/OIcnFc4sRPOYu6TLUcRz/FC3wfXGsZfTFe0N6+AvA0Aw7BcROCVGHB/Vr4cdFPMPY1efAdj4rz5tZq38N+PilGYN3ikxb0X8m1pp3bglaJRXxOcFjjzM4R284lNBrKknhXc1whrDOw6QD07jr0+AJfrtev5trDr0SyRCeC8X6JDXr3OVWMbju6nGsT+FMLmvNZH4Ky9zrtmO9QLhT/Wux66J0ToZfm+FZJOLGT/MHAm15xfQ74v+x6GyzD/xOTzax6lviLIKBbHgZdLzkPRorRbe/CyC00DxPomqSHpAVf05hDNz9TgUX59WYXySQ8rog/TaKBVj8GFAQtVUU9q8G1ymp7y/bSHVHCBITSGmiz0pdrNcxD43+pU+Y9M+NA87/kTHQ5+lDJ4amXw1MrgqZXBUyuDpxXDb+nzWJgswE3OAAAAAElFTkSuQmCC" />
+                      </ui:ImageFound.Image>
+                      <ui:ImageFound.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+                      </ui:ImageFound.Target>
+                    </ui:ImageFound>
+                    <If Condition="[boolMenIMGexist]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_28">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Men</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                    <ui:ImageFound DisplayName="Kids Image Exists 'chrome.exe Kids'" Found="[boolKidsIMGexist]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ImageFound_6">
+                      <ui:ImageFound.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAlCAYAAAAEGWqvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJMSURBVFhH7ZWhkqQwEIbvOXgQngC5Lg43DjcSh+MJxuGQuDjcuDgkLg43Lg75XyckIZNht3aou6O2jq76RXo6TX9Jp+dXkiT4yToBjtYJcLROgKN1AhytE+Bo/Q8AV9w4ByfdrqE/Rdksfs47NOUHElahNesbrk85QjFU7Va+ffoGQAeJxWS3+vNOYrb+WXbItb8SUMYj0fn9sSqIJegp317tAtgsXqvoMEgJKXvUfn+sgwFSf8pU/NSjTIPYlOFSFCiKHFmQIyvbpdU6aq3sE4CMWrWzLanjWLr+9oXeApjEWjweAlVYvNZLC6WoxMN4vM0Kyl6fA0irOx7uSr0pjG3+nH9DbwGENvGN5DHAlQoza31bA3p+h/Qn4AAY+LSs1XCj2ytQ95Nt0RFN/I1IuwEIAX0exUYApeuVx32dSozTzsUWgNK3lBpblHlGvgy5acULWHzLkd4CMD1frAVAURuFsREAvXVjSlRBvgJ3ey2uha7O4W2GeozgpYZx+7b19iPWvnAK6eJSFxsBNKNZUCc0Qb6tR5yiuPUYJoX56S0oiMrFbGsXQJLkdLoegT5iJ0YEwKiXF5vAbbuFU2zJR9OnFxilQMNs/qzG8AK5rZ0AJEZ+xzDTY9O9GgGYGLPWNtPpPh2vzbc+4nkSaGt6xN1gp9KMobbf+0T7AUgs/kOLAUhZLfwkMkbjV9iCfb68xeiuxduM6R605yf6BsAfkPuDu7AvCkrBLnryLMqzrZhX/RuAv6gT4GidAEfrBDhaJ8DROgGO1g8HSPAbA8E0J849gfMAAAAASUVORK5CYII=" />
+                      </ui:ImageFound.Image>
+                      <ui:ImageFound.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
+                      </ui:ImageFound.Target>
+                    </ui:ImageFound>
+                    <If Condition="[boolKidsIMGexist]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_29">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Kids</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="526,445" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:UiElementExists DisplayName="Element Exists 'H1'" Exists="[boolWebpageNotfound]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_14">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3b72366f2c07961136e8b7448c73811c" Selector="&lt;webctrl tag='H1' aaname='We couldn&amp;apos;t find this page.' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <If Condition="[boolWebpageNotfound=True]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_26">
+                      <If.Then>
+                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[str_ZUKItemStatus]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Couldn't find this web page</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </If.Then>
+                    </If>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </FlowStep>
+  </Flowchart>
+</Activity>
